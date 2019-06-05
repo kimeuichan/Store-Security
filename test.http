@@ -1,0 +1,16 @@
+POST http://localhost/api/user/join
+Content-Type: application/json; charset=utf-8
+
+{
+    "id": "TEST",
+    "password": "TEST33",
+    "serial": "TEST1234"
+}
+
+POST http://localhost/api/user/login
+Content-Type: application/json; charset=utf-8
+
+{
+    "id": "TEST",
+    "password": "TEST33"
+}
