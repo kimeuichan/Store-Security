@@ -1,4 +1,4 @@
-import {Entity, PrimaryColumn, Column, BaseEntity, Unique} from "typeorm";
+import {Entity, PrimaryColumn, Column, BaseEntity, Unique, PrimaryGeneratedColumn} from "typeorm";
 import { createHash } from "crypto"
 
 
@@ -29,4 +29,14 @@ export class User extends BaseEntity{
 
 }
 
-export default User;
+@Entity('aruino_log')
+class Arduino_log extends BaseEntity {
+    @PrimaryGeneratedColumn()
+    id: number;
+
+    @Column()
+    data: string;
+
+
+    
+}

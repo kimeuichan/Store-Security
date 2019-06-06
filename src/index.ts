@@ -9,7 +9,7 @@ import { User } from "./models";
 
 
 const app = express();
-const port = 80;
+const port = 5000;
 const connection = createConnection({
     type: "sqlite",
     database: "./app.db",
