@@ -5,7 +5,7 @@ import ExpressSession from "express-session";
 
 
 import {createConnection} from "typeorm";
-import { User } from "./models";
+import { User, Arduino_log } from "./models";
 
 
 const app = express();
@@ -14,7 +14,7 @@ const connection = createConnection({
     type: "sqlite",
     database: "./app.db",
     entities: [
-      User,
+      User, Arduino_log
     ],
     synchronize: true,
 }).then(connection => {

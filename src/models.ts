@@ -1,4 +1,4 @@
-import {Entity, PrimaryColumn, Column, BaseEntity, Unique, PrimaryGeneratedColumn} from "typeorm";
+import {Entity, PrimaryColumn, Column, BaseEntity, Unique, PrimaryGeneratedColumn, CreateDateColumn } from "typeorm";
 import { createHash } from "crypto"
 
 
@@ -29,14 +29,17 @@ export class User extends BaseEntity{
 
 }
 
-@Entity('aruino_log')
-class Arduino_log extends BaseEntity {
+@Entity('arduino_log')
+export class Arduino_log extends BaseEntity {
     @PrimaryGeneratedColumn()
     id: number;
 
     @Column()
     data: string;
 
+    @Column()
+    serial: string;
 
-    
+    @CreateDateColumn()
+    date: Date;
 }
