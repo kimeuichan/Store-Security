@@ -7,6 +7,7 @@ import { Arduino_log } from "../models";
 const arduinoRouter = Router();
 
 arduinoRouter.get('/save', async_handler(async (req: Request, res:Response) => {
+    console.log(req.query);
     if(req.query.serial && req.query.data) {
         const arduino:Arduino_log = new Arduino_log();
         arduino.data = req.query.data;
@@ -22,6 +23,7 @@ arduinoRouter.get('/get', async_handler(async (req: Request, res:Response) => {
             status: "fail",
             msg: "You have to login for this method"
         });
+        return;
     }
 
     if(req.session['user'].serial != req.query.serial){
@@ -29,6 +31,7 @@ arduinoRouter.get('/get', async_handler(async (req: Request, res:Response) => {
             status: "fail",
             msg: "You can't access this serial"
         });
+        return;
     }
 
     else{
