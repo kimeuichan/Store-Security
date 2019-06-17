@@ -63,6 +63,7 @@ userRouter.post('/join', async_handler(async (req:Request, res:Response) => {
             "status": "fail",
             "msg": "already used id",            
         });
+        return ;
     }
 
     user = new User();

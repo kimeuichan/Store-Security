@@ -15,9 +15,9 @@ Content-Type: application/json; charset=utf-8
     "password": "TEST33"
 }
 
-GET http://localhost:5000/api/arduino/save?data={abcd:1}&serial=TEST1234
+GET http://localhost:5000/api/arduino/save?data={temp:30,humidity:30,flame:300,rain:20,vibe:30}&serial=TEST1234
 
-GET http://localhost:5000/api/arduino/get?serial=TEST1234
+GET http://localhost:5000/api/arduino/get
 
 
 POST http://211.253.229.117:5000/api/user/join
@@ -31,7 +31,6 @@ Content-Type: application/json; charset=utf-8
 
 POST http://211.253.229.117:5000/api/user/login
 Content-Type: application/json; charset=utf-8
-
 {
     "id": "TEST",
     "password": "TEST33"
